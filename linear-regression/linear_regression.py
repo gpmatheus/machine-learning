@@ -49,10 +49,10 @@ alpha = float(sys.argv[args['alpha']]) # 0.0001
 
 max_dvt = float(sys.argv[args['max_dvt']]) # 0.0001
 while theta0_dvt > max_dvt or theta1_dvt > max_dvt:
-    theta0_dvt, theta1_dvt = dvt(data, h)
     theta0 -= theta0_dvt * alpha
     theta1 -= theta1_dvt * alpha
     h = create_hypothesis([theta0, theta1])
+    theta0_dvt, theta1_dvt = dvt(data, h)
 
 print(theta0, theta1)
 
