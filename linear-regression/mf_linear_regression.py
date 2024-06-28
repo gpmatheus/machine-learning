@@ -39,6 +39,13 @@ class LinearRegression:
     
     def result(self):
         return self.__theta, self.__derivatives
+    
+    def guess(self, x):
+        if len(x) == len(self.__theta) - 1:
+            theta = list(self.__theta)
+            theta0 = theta.pop(0)
+            return theta0 + np.dot(np.array(theta), x)
+        return None
 
 
 # test
