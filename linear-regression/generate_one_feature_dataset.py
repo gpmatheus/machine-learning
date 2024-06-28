@@ -3,7 +3,7 @@ import csv
 import numpy as np
 
 X = [random.random() for i in range(50)]
-data = np.array([X, [i * .4 + (.2 + random.random() / 10) for i in X]])
+data = np.array([X, [i * .4 + 3 for i in X]])
 data = data.transpose()
 
 with open('simple_data.csv', mode='x', newline='') as file:
