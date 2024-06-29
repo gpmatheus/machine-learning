@@ -93,10 +93,11 @@ if __name__=='__main__':
     parser.add_argument('--alpha', action='store', nargs='?', required=False, default=0.01, type=float)
     parser.add_argument('--max-dvt', action='store', nargs='?', required=False, default=0.01, type=float)
     parser.add_argument('--plot', action='store', nargs='?', required=False, default=True, type=bool)
+    parser.add_argument('--sep', action='store', nargs='?', required=False, default=',', type=str)
 
     sys.argv.pop(0)
     args = parser.parse_args(sys.argv)
-    data = pandas.read_csv(args.filename)
+    data = pandas.read_csv(args.filename, sep=args.sep)
 
     linear_regression = LinearRegression(
         data,
