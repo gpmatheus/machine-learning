@@ -56,8 +56,8 @@ def plot3d(x, y, z, theta):
 
     ax.scatter(x, y, z, color='b', marker='o', label='Data')
 
-    x_surface = np.linspace(np.min(x1), np.max(x1), 2)
-    y_surface = np.linspace(np.min(x2), np.max(x2), 2)
+    x_surface = np.linspace(np.min(x), np.max(x), 2)
+    y_surface = np.linspace(np.min(y), np.max(y), 2)
     x_surface, y_surface = np.meshgrid(x_surface, y_surface)
     z_surface = theta[0] + x_surface * theta[1] + y_surface * theta[2]
 
